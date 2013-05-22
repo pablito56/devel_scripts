@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ $# = 1 ]
+then
+	echo "find . -exec grep \"$1\" {} /dev/null \\;"
+	find . -exec grep -n "$1" {} /dev/null \; 2> /dev/null | grep -v .svn | grep -v .git | grep -v "Binary file" | grep --color "$1"
+else
+	echo "find . -name \"$2\" -exec grep \"$1\" {} /dev/null \\;"
+	find . -name "$2" -exec grep -n "$1" {} /dev/null \; 2> /dev/null | grep -v .svn  | grep -v .git | grep -v "Binary file" | grep --color "$1"
+fi
