@@ -1,5 +1,5 @@
-Automatic Virtualenv activation / deactivation
-==============================================
+Lighweight automatic Virtualenv activation / deactivation
+=========================================================
 
 Bash script to be sourced from your `~/.bashrc` or `~/.bash_profile` to enable automatic activation or deactivation of Virtualenvs.
 
