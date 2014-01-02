@@ -26,7 +26,7 @@ function set_folder_venv
     if [ -f $1"/"$VENV_FILE ]; then
         export CURR_VENV=$(cat $1"/"$VENV_FILE)
     else
-        CURR_FOLDER=$(basename $1)
+        CURR_FOLDER=$(basename "$1")
 #         tmp=$(ls $VENV_ROOT"/"$CURR_FOLDER 2>&1)
 #         if [ $? -eq 0 ]; then
         if [ -d $VENV_ROOT"/"$CURR_FOLDER ]; then
@@ -45,7 +45,7 @@ function set_curr_venv
         if [ -n "$CURR_VENV" ]; then
             break
         fi
-        FOLDER=$(dirname $FOLDER)
+        FOLDER=$(dirname "$FOLDER")
     done
 }
 
@@ -54,7 +54,7 @@ function auto_venv
 {
     unset OLD_VENV
     if [ -n "$VIRTUAL_ENV" ]; then
-        OLD_VENV=$(basename $VIRTUAL_ENV)
+        OLD_VENV=$(basename "$VIRTUAL_ENV")
     fi
     set_curr_venv
     if [ "$OLD_VENV" != "$CURR_VENV" ]; then

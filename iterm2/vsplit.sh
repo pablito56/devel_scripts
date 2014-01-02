@@ -9,7 +9,7 @@ tell application \"iTerm\"
  tell the first terminal
         tell application \"System Events\" to keystroke \"d\" using command down
   tell the current session
-   write text \"cd $(pwd)\"
+   write text \"cd '$(pwd)'\"
   end tell
  end tell
 end tell"

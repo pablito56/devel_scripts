@@ -14,7 +14,7 @@ function custom_cd
         DEST_FOLDER=$PWD 
 #         echo "Looking for '$WSPACE_FOLDER' inside '$DEST_FOLDER'"
         while [ "$DEST_FOLDER" != "/" ]; do
-            PARENT_FOLDER=$(dirname $DEST_FOLDER)
+            PARENT_FOLDER=$(dirname "$DEST_FOLDER")
 #             echo "Inside loop. '$DEST_FOLDER' vs. '$WSPACE_FOLDER'"
             if [ "$PARENT_FOLDER" == "$WSPACE_FOLDER" ] && [ "$DEST_FOLDER" != "$PWD" ]; then
                 cd "$DEST_FOLDER"

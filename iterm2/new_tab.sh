@@ -9,7 +9,7 @@ tell application \"iTerm\"
  tell the last terminal
   launch session \"Default Session\"
   tell the last session
-   write text \"cd $(pwd)\"
+   write text \"cd '$(pwd)'\"
   end tell
  end tell
 end tell"
